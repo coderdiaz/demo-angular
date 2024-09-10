@@ -1,0 +1,43 @@
+<!-- Directivas existente o internas -->
+
+<p [ngClass]="isMagic ? 'green': 'red'">Ejemplo con ngClass</p>
+<p [ngStyle]="{'color': isMagic ? 'green' : 'red'}">Ejemplo con ngStyle</p>
+<p appHighlight>Highlighted con Directiva personalizada</p>
+
+<!-- Directivas estructurales -->
+<!-- IF -->
+<div *ngIf="isRenderable">
+  <p>Si debo renderizarme</p>
+</div>
+
+<ng-template [ngIf]="isRenderable">
+  <p>Necesito ocultarme cuando isRenderable es falso</p>
+  <p>Necesito ocultarme cuando isRenderable es falso</p>
+</ng-template>
+
+<!-- For -->
+<ul>
+  <pokemon-item
+    *ngFor="let item of pokemon; let i = index"
+    [pokemon]="item"
+  ></pokemon-item>
+</ul>
+
+<ng-template
+  ngFor
+  let-item
+  [ngForOf]="pokemon"
+  let-i="index"
+  let-odd="odd"
+>
+  <div [ngClass]="odd ? 'gray' : ''">
+    {{ i + 1 }} - {{ item | json }}
+  </div>
+</ng-template>
+
+<!-- Switch -->
+<div [ngSwitch]="pokemon.length">
+  <p *ngSwitchCase="1">Solo hay un pokemon</p>
+  <p *ngSwitchCase="2">Hay dos pokemones</p>
+  <p *ngSwitchDefault>Hay muchos pokemones</p>
+</div>
