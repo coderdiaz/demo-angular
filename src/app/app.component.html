@@ -7,5 +7,9 @@
     *ngIf="hiddenLifecycleExample"
     [name]="name"
   ></lifecycle-example>
+  <h2>Rick and morty Characters</h2>
+  <ul>
+    <li *ngFor="let item of characters$ | async">{{item.name}}</li>
+  </ul>
   <router-outlet />
 </main>
