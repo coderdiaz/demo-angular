@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ExampleService } from './services/example.service';
 import { Observable } from 'rxjs';
+import { ExampleEventsComponent } from './example-events/example-events.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { Observable } from 'rxjs';
     CommonModule,
     HelloWorldComponent,
     DirectiveExampleComponent,
-    LifecycleExampleComponent
+    LifecycleExampleComponent,
+    ExampleEventsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
