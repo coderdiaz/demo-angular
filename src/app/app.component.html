@@ -1,5 +1,11 @@
 <main class="main">
   <hello-world></hello-world>
   <directive-example></directive-example>
+  <input type="checkbox" [(ngModel)]="hiddenLifecycleExample" />
+  <input type="text" [(ngModel)]="name" />
+  <lifecycle-example
+    *ngIf="hiddenLifecycleExample"
+    [name]="name"
+  ></lifecycle-example>
   <router-outlet />
 </main>
